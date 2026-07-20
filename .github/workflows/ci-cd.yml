@@ -49,4 +49,5 @@ jobs:
                 password: ${{ secrets.DOCKER_PASSWORD }}
 
             - name: Push image
-              run: docker push my-react-app:${{github.sha}}
+              run: docker push ${{ secrets.DOCKER_USERNAME }}/my-react-app:${{github.sha}}
+                   docker push ${{ secrets.DOCKER_USERNAME }}/my-react-app:latest
