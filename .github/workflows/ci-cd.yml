@@ -50,4 +50,3 @@ jobs:
 
             - name: Push image
               run: docker push ${{ secrets.DOCKER_USERNAME }}/my-react-app:${{github.sha}}
-                   docker push ${{ secrets.DOCKER_USERNAME }}/my-react-app:latest
