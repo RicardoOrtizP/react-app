@@ -77,3 +77,12 @@ jobs:
                 tags: | 
                   ${{steps.bijuu.outputs.tag_full}}
                   ${{steps.bijuu.outputs.tag_alias}}
+            
+            - name: Docker Hub Description
+              uses: docker/README-action@v1
+              with:
+                username: ${{ secrets.DOCKER_USERNAME }}
+                password: ${{ secrets.DOCKER_PASSWORD }}
+                repository: ${{ secrets.DOCKER_USERNAME }}/my-react-app
+                short-description: "Aplicación de React desplegada con etiquetado temático de Bijuus."
+                readme-filepath: ./README-DOCKER.md
